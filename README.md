@@ -1,0 +1,23 @@
+# Aviot Streaming API
+## Env variables
+
+##### Exposed from kubernetes
+- `JANUS_SERVICE_HOST`
+- `JANUS_SERVICE_PORT`
+- `ROS_MASTER_SERVICE_HOST`
+- `ROS_MASTER_SERVICE_PORT`
+- `MONGODB_SERVICE_HOST`
+- `MONGODB_SERVICE_PORT`
+#### Manually exposed
+- `JANUS_API_SECRET` required
+- `JWT_SECRET_KEY` required
+- `JWT_TOKEN_TTL` 
+- `IMG_STORE_URL` 
+- `VIDEO_STORE_URL`
+- `PAT_IMGS`
+- `PATH_VIDEOS`
+- `HTTPS_FLASK_KEY`
+- `HTTPS_FLASK_CERT`
+- `JANUS_SERVICE_PATH`
+- `JANUS_API_SECRET` required
+- `MONGODB_DATABASE_NAME` required
