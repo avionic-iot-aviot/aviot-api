@@ -74,18 +74,19 @@ class VideoroomEndpoint(Resource):
         streaming_server_ip = current_app.config['JANUS_STREAM_SETTINGS']['server']
         streaming_server_port = current_app.config['JANUS_STREAM_SETTINGS']['port']
 
-        videoroom = app.models.videoroom.VideoRoomInfo()
-        videoroom.status = "initializing"
-        videoroom.created_at = str(time.time())
-        videoroom.name = str(videoroom_name)
-        videoroom.label = data['label']
-        videoroom.pin = str(videoroom_pin)
-        videoroom.secret = videoroom_secret
-        videoroom.server = streaming_server_ip
-        # FIXME in realta' la porta potrebbe non essere necessaria se e' presente un reverse-proxy (es. nginx)
-        videoroom.port = streaming_server_port
-        videoroom.access_token = janus_token
-        videoroom.save()
+        # MIK - disable mongo db interactions
+        #videoroom = app.models.videoroom.VideoRoomInfo()
+        #videoroom.status = "initializing"
+        #videoroom.created_at = str(time.time())
+        #videoroom.name = str(videoroom_name)
+        #videoroom.label = data['label']
+        #videoroom.pin = str(videoroom_pin)
+        #videoroom.secret = videoroom_secret
+        #videoroom.server = streaming_server_ip
+        ## FIXME in realta' la porta potrebbe non essere necessaria se e' presente un reverse-proxy (es. nginx)
+        #videoroom.port = streaming_server_port
+        #videoroom.access_token = janus_token
+        #videoroom.save()
 
         # 5. Ritornare al client le info sul videoroom creato
         return {
