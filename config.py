@@ -78,6 +78,7 @@ class DevelopmentConfig(Config):
     JANUS_STREAM_SETTINGS = {
         "server": os.getenv("JANUS_SERVICE_HOST") if os.getenv("JANUS_SERVICE_HOST") is not None else "192.168.1.24",
         'port': os.getenv("JANUS_SERVICE_PORT") if os.getenv("JANUS_SERVICE_PORT") is not None else "8088",
+        'ip': os.getenv("JANUS_SERVICE_IP") if os.getenv("JANUS_SERVICE_IP") is not None else "10.11.0.3",
         "schema": 'http'
     }
 
@@ -109,6 +110,7 @@ class TestingConfig(Config):
         "server": os.getenv("JANUS_SERVICE_HOST") if os.getenv(
             "JANUS_SERVICE_HOST") is not None else "ec2-54-93-106-207.eu-central-1.compute.amazonaws.com",
         'port': os.getenv("JANUS_SERVICE_PORT") if os.getenv("JANUS_SERVICE_PORT") is not None else "8088",
+        'ip': os.getenv("JANUS_SERVICE_IP") if os.getenv("JANUS_SERVICE_IP") is not None else "10.11.0.3",
         "schema": 'http'
     }
 
