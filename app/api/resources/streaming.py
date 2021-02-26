@@ -89,7 +89,7 @@ class StreamingEndpoint(Resource):
         video_port = response['plugindata']['data']['stream']['video_port']  # TODO store in DB
         audio_port = response['plugindata']['data']['stream']['audio_port'] if data['audio'] else 0
         streaming_server_schema = current_app.config['JANUS_STREAM_SETTINGS']['schema']
-        streaming_server_ip = current_app.config['JANUS_STREAM_SETTINGS']['server']
+        streaming_server_ip = current_app.config['JANUS_STREAM_SETTINGS']['ip']
         streaming_server_port = current_app.config['JANUS_STREAM_SETTINGS']['port']
 
         # MIK - disable mongo interactions

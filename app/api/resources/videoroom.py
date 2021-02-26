@@ -71,7 +71,7 @@ class VideoroomEndpoint(Resource):
 
 
         # TODO controllare i parametri
-        streaming_server_ip = current_app.config['JANUS_STREAM_SETTINGS']['server']
+        streaming_server_ip = current_app.config['JANUS_STREAM_SETTINGS']['ip']
         streaming_server_port = current_app.config['JANUS_STREAM_SETTINGS']['port']
 
         # MIK - disable mongo db interactions
