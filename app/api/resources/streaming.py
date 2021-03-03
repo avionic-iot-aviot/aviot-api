@@ -93,20 +93,20 @@ class StreamingEndpoint(Resource):
         streaming_server_port = current_app.config['JANUS_STREAM_SETTINGS']['port']
 
         # MIK - disable mongo interactions
-        #stream_info = app.models.streaming.StreamInfo()
-        ##stream_info.device_id = device_obj
-        ##stream_info.label = data['label']
-        #stream_info.s_id = janus_feed_id
-        #stream_info.status = 'live'
-        #stream_info.ts = str(time.time())
-        #stream_info.s_pin = janus_feed_pin
-        #stream_info.s_token = janus_token
-        #stream_info.server_ip = streaming_server_ip
-        #stream_info.server_port = streaming_server_port
-        #stream_info.server_schema = streaming_server_schema
-        ##stream_info.organization = current_user.orgarnization
+        stream_info = app.models.streaming.StreamInfo()
+        #stream_info.device_id = device_obj
+        #stream_info.label = data['label']
+        stream_info.s_id = janus_feed_id
+        stream_info.status = 'live'
+        stream_info.ts = str(time.time())
+        stream_info.s_pin = janus_feed_pin
+        stream_info.s_token = janus_token
+        stream_info.server_ip = streaming_server_ip
+        stream_info.server_port = streaming_server_port
+        stream_info.server_schema = streaming_server_schema
+        #stream_info.organization = current_user.orgarnization
 
-        #stream_info.save()
+        stream_info.save()
 
         # 5. Ritornare al client le info sullo stream
         return {
